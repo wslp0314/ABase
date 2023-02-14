@@ -1,0 +1,1440 @@
+2020-1-1 17:40:44:307   api: view code <1> 50
+
+adding dns 192.168.43.1
+p2p_net_data_process2, data:p2p, len:3
+Start record thread .ch num 1 sleepTimeMS 10 
+CDiskInfoSet GetRecordDiskNum 1 Thread ID -1543126608  Start DataProcThread. Record index leaf 0 .
+Start diskNO 0.Start Index -5002 
+ ch[0] recType[0] diskLeaf[0 MB]
+FUNCTION: DataProcThread : 1423, record thread  pTask->MANUAL_SWITCH -1 GetLeafFileNum 0 .
+ Start Recrod Time STFS-Seg 2020-01-01 17:40:46.
+Disk Active cur disk 0 disk num 1
+ prepare Recrod Time 2020-01-01 17:40:43 -- 17:40:46.
+Prepare IFrame num 3  data size 105698 .
+p2p_net_data_process2, data:p2p, len:3
+File index empty. ret -5002
+Detect old record index 70 type 2 size 3514389.
+ index time 2023-01-04 06:08:56 -- 06:10:31.
+Prepare found leaset index for cycle record .m_index size 169  m_leastSN  1674 
+FUNCTION: SearchCycleSNIdx : 1338, Stroage:Can not found least SN .cur SN 1972 
+Stroage:Selected File Index 00070 segs01 size 3514389 CH00.
+  Recycle record 2023-01-04 06:08:56 -- 06:10:31.
+Dev /dev/mmcblk0 Get reCycle m_diskIndex 0 fileindex 70 .
+CH 00 Get next index diskIndex 0 fileindex 70 Dev /dev/mmcblk0.
+ record time STFS-Seg 2020-01-01 17:40:46.
+FUNCTION: AddRecordTask : 252, Create thread for record.
+CH00 Open file index 70 OK fileSize 67108864 LBA 17565696.diffComsize 2420.
+CRecordDataIO::DataFlushThread.
+DevRec thread start. sleep time rec 10.
+ open record start STFS-Seg 2020-01-01 17:40:46.
+CH00  CFileIndex::RecordStart type 2 leaf block 0 record SN [ 01972 ].
+CH00 dev /dev/mmcblk0 index 00070 SN 01973 Write frame size 000013612 free size 66902740 percent 00 type 2 frame water 2 write speed 0 
+p2p_net_data_process2, data:p2p, len:3
+SetVideoStatus : 1
+ ch[0] recType[2] diskLeaf[0 MB]
+Fri Jan  6 12:06:08 GMT 2023
+date -s "2023-1-6 12:6:8"
+video and timeset is ready. real video size: 12902
+[thread_sdk_func(): 13] thread_sdk_func enter
+[libsdk_print_version(): 7] version: git
+[libsdk_init(): 22] sdk init exit
+[libsdk_api_live_init(): 16] 
+[addSession(): 43] Play this stream using the URL : rtsp://192.168.43.100:8554/ivicar[device_live_video_process_main(): 20] device_live_video_process_main process start
+[live_video_thread(): 10] [device_p2p_process_main(): 71] device_p2p_process_main process start: argv[0] = d60103353841343341108bec7ca0b83bdevice_p2p_pr[thread_sdk_func(): 41] [loop(): 92] [p2p_thrb
+[handler_http_api__get_p2p_info(): 41] post api: http://iov.ivicar.cn/ws/v2/rmon/nabto, body: deviceId=d60103353841343341108bec7ca0b83b
+update_network_state: mqtt connected and network on, p2p need init.p2p_net_data_process2, data:p2p, len:3
+[libsdk_api_receive_msg(): 29] receive_msg:p2p, len:3
+[libsdk_api_receive_msg(): 49] libsdk_api_get_p2p_status: 0
+[libsdk_api_receive_msg(): 53] sdk not initialized
+*   Trying 121.41.17.229:80...
+* TCP_NODELAY set
+* Connected to iov.ivicar.cn (121.41.17.229) port 80 (#0)
+> POST /ws/v2/rmon/nabto HTTP/1.1
+Host: iov.ivicar.cn
+Accept: */*
+Content-Length: 41
+Content-Type: application/x-www-form-urlencoded
+
+* upload completely sent off: 41 out of 41 bytes
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200 
+< Server: nginx/1.4.6 (Ubuntu)
+< Date: Fri, 06 Jan 2023 04:06:09 GMT
+< Content-Type: application/json;charset=UTF-8
+< Content-Length: 134
+< Connection: keep-alive
+< 
+* Connection #0 to host iov.ivicar.cn left intact
+[handler_http_api__get_p2p_info(): 44] post result success: {
+        "msg":"成功",
+        "code":0,
+        "data":{
+                "nabtoId":"434vzjma.ivicar.nabto.net",
+                "nabtoCode":"2cf77d89f677a08dc6fc9599c8bdd1a9"
+        }
+}
+[cjson_get_json_object_integer(): 37] code 0
+[cjson_get_json_object_string(): 22] nabtoId "434vzjma.ivicar.nabto.net"
+[cjson_get_json_object_string(): 22] nabtoCode "2cf77d89f677a08dc6fc9599c8bdd1a9"
+[p2p_thread(): 22] get nabto info result: {
+        "msg":"成功",
+        "code":0,
+        "data":{
+                "nabtoId":"434vzjma.ivicar.nabto.net",
+                "nabtoCode":"2cf77d89f677a08dc6fc9599c8bdd1a9"
+        }
+}
+[p2p_thread(): 23] nabto_id "434vzjma.ivicar.nabto.net"
+[p2p_thread(): 24] pre_shared_key "2cf77d89f677a08dc6fc9599c8bdd1a9"
+[p2p_thread(): 26] start p2p connection!
+[p2p_thread(): 28] libsdk_api_get_p2p_status: 1
+================================================================================
+IMPORTANT INFORMATION ABOUT SECURITY BEFORE USING IN PRODUCTION
+
+It is of utmost importance that you understand how security works in Nabto,
+please carefully read TEN036 "Security in Nabto Solutions" available from
+https://www.nabto.com/downloads.html.
+
+You must choose a client authorization model for use in your project to restrict
+access to this device, the different possible models are outlined in section 8
+of TEN036. Please contact support@nabto.com if you have any questions in this regard.
+
+PERFORMANCE
+
+Please see TEN030 "Nabto Tunnels" for information on how to optimize performance.
+If you observe performance problems, consult the FAQ section in TEN030 and follow
+the suggestions there before contacting support.
+================================================================================
+
+12:06:09:298 unabto_common_main.c(110) Device id: '434vzjma.ivicar.nabto.net'
+12:06:09:298 unabto_common_main.c(111) Program Release 4.5.0-alpha.0
+12:06:09:299 unabto_stream_event.c(235) sizeof(stream__)=6528
+12:06:09:299 unabto_context.c(55) SECURE ATTACH: 1, DATA: 1
+12:06:09:299 unabto_context.c(63) NONCE_SIZE: 32, CLEAR_TEXT: 0
+12:06:09:322 unabto_common_main.c(183) Nabto was successfully initialized
+12:06:09:323 unabto_context.c(55) SECURE ATTACH: 1, DATA: 1
+12:06:09:323 unabto_context.c(63) NONCE_SIZE: 32, CLEAR_TEXT: 0
+12:06:09:324 unabto_attach.c(770) State change from IDLE to WAIT_DNS
+12:06:09:324 unabto_attach.c(771) Resolving DNS for 434vzjma.ivicar.nabto.net
+12:06:09:425 unabto_attach.c(790) Resolved DNS for 434vzjma.ivicar.nabto.net to:
+12:06:09:425 unabto_attach.c(796)   Controller ip: 54.223.141.51
+12:06:09:425 unabto_attach.c(796)   Controller ip: 52.80.68.32
+12:06:09:425 unabto_attach.c(802) State change from WAIT_DNS to WAIT_BS
+12:06:09:523 unabto_attach.c(480) State change from WAIT_BS to WAIT_GSP
+12:06:09:523 unabto_attach.c(481) GSP address: 52.80.68.32:5565
+12:06:09:523 unabto_attach.c(270) ########    U_INVITE with LARGE nonce sent, version: - URL: -
+12:06:09:663 unabto_attach.c(563) State change from WAIT_GSP to ATTACHED
+ last time STFS-Seg 2020-01-02 01:40:49.
+ cur frame time STFS-Seg 2023-01-06 12:06:08.
+CH 00 Tm jump forward. diff  95077518149d msFUNCTION: WriteOneFrameData : 957, CH00 File is jump. size 315631.
+CH00  irec info ch 0 indexNO 70 len 123119 m_bOpenFile 0.
+CH00 CurIndex 70 Only one record segment. lenth 123119 
+CH00 index NO rec info ch 0 70 Record End type 2 len 123119 m_bOpenFile 0.
+ Record End 2020-01-02 01:40:46 -- 01:40:49.
+File index empty. ret -5002
+Stroage:Selected File Index 00070 segs01 size 123119 CH00.
+  Recycle record 2020-01-02 01:40:46 -- 01:40:49.
+Dev /dev/mmcblk0 Get reCycle m_diskIndex 0 fileindex 70 .
+CH 00 Get next index diskIndex 0 fileindex 70 Dev /dev/mmcblk0.
+ record time STFS-Seg 2023-01-06 12:06:08.
+Find device. /dev/mmcblk0 
+Add record.Record file indexNo 70, Record num 1   
+CH 00 LBA 17565696 
+CH00 Open file index 70 OK fileSize 67108864 LBA 17565696.diffComsize 2420.
+ open record start STFS-Seg 2023-01-06 12:06:08.
+CH00  CFileIndex::RecordStart type 2 leaf block 0 record SN [ 01973 ].
+p2p_net_data_process2, data:p2p, len:3
+[libsdk_api_receive_msg(): 29] receive_msg:p2p, len:3
+[libsdk_api_receive_msg(): 49] libsdk_api_get_p2p_status: 1
+[libsdk_api_send_msg(): 18] send_msg:p2pack, len:6
+[p2p_event_callback,115] type:3 data:p2pack len:6.
+uart_4g_write1: p2pack, len:7
+uart_4g_write2: p2pack&, len:8
+ ch[0] recType[2] diskLeaf[0 MB]
+12:06:11:747 unabto_connection.c(546) (0.3854807190.0) U_CONNECT: noRdv=0, cpeq=0, asy=1, NATType: 7
+12:06:11:747 unabto_connection.c(547) (0.3854807190.0)   cp.private: 10.226.250.215:58228
+12:06:11:747 unabto_connection.c(548) (0.3854807190.0)   cp.global:  221.216.116.102:34964
+12:06:11:747 unabto_connection.c(622) Connection opened from '' (to 434vzjma.ivicar.nabto.net). Encryption code 8970. Fingerprint 66:a5:19:75...
+12:06:11:748 tcp_fallback_select.c(291) [0;2496834380] Ep. 52.80.68.32:5568
+p2p_net_data_process2, data:ping, len:4
+[libsdk_api_receive_msg(): 29] receive_msg:ping, len:4
+[libsdk_api_send_msg(): 18] send_msg:pong, len:4
+[p2p_event_callback,115] type:3 data:pong len:4.
+uart_4g_write1: pong, len:5
+uart_4g_write2: pong&, len:6
+m_viewDly_tm delay time out .diff 15008 m_360_delay 15  
+ 12:06:16:746 unabto_connection.c(870) Rendezvous timeout. Extended rendezvous sockets opened 247, 0 is perfectly fine
+12:06:16:746 unabto_connection.c(703) Extended rendezvous ports opened: 1000, 0 is perfectly fine.
+12:06:16:892 unabto_connection.c(664) (0.3854807190.0) TCP FAllback connection 
+p2p_net_data_process2, data:start, len:5
+[libsdk_api_receive_msg(): 29] receive_msg:start, len:5
+[libsdk_api_send_msg(): 18] send_msg:startack, len:8
+[p2p_event_callback,115] type:3 data:startack len:8.
+uart_4g_write1: startack, len:9
+uart_4g_write2: startack&, len:10
+[p2p_event_callback,115] type:1 data:(null) len:0.
+[splitFrames(): 72] profile-level-id=4d001f;sprop-parameter-sets=Z00AH5ZUAoAtiA==,aO48gA==12:06:18:858 unabto_tunnel_tcp.c(299) Tunnel(0) connecting to 127.0.0.1:8554
+12:06:18:859 libp2p_unabto.c(610) Tunnel event [0] on tunnel [0] to host [127.0.0.1] on port [8554], bytes sent: [0]
+RTCPInstance::RTCPInstance error: totSessionBW parameter should not be zero!
+p2p_net_data_process2, data:ping, len:4
+[libsdk_api_receive_msg(): 29] receive_msg:ping, len:4
+[libsdk_api_send_msg(): 18] send_msg:pong, len:4
+[p2p_event_callback,115] type:3 data:pong len:4.
+uart_4g_write1: pong, len:5
+uart_4g_write2: pong&, len:6
+p2p_net_data_process2, data:ping, len:4
+[libsdk_api_receive_msg(): 29] receive_msg:ping, len:4
+[libsdk_api_send_msg(): 18] send_msg:pong, len:4
+[p2p_event_callback,115] type:3 data:pong len:4.
+uart_4g_write1: pong, len:5
+uart_4g_write2: pong&, len:6
+12:06:35:352 unabto_tcp.c(52) Send of tcp packet failed error: Bad file descriptor, socket: -1
+12:06:35:352 tcp_fallback_select.c(348) [0;2496834380] Send of tcp packet failed
+12:06:35:352 unabto_tunnel_tcp.c(323) closing socket 342
+12:06:35:353 unabto_tunnel_tcp.c(88) Tunnel(0) closed, sentPackets: 1058, sentBytes 576545, sentResentPackets 0, receivedPackets 929, receivedBytes 506, receivedResentPackets 0, reorderedOrLostPack7
+12:06:35:353 libp2p_unabto.c(610) Tunnel event [1] on tunnel [0] to host [127.0.0.1] on port [8554], bytes sent: [576545]
+[doStopGettingFrames(): 77] DisplayDeviceSource::doStopGettingFrames[doStopGettingFrames(): 77] DisplayDeviceSource::doStopGettingFrames12:06:35:651 unabto_connection.c(143) (0.3854807190.0) Releas)
+
+LAVM3D login: [154]HELLO! BOOT0 is starting!
+[157]BOOT0 commit : 093c381
+[159]set pll start
+[162]periph0 has been enabled
+[165]set pll end
+[167]PMU: AXP858
+[173]dram return write ok
+[175]board init ok
+[177]debug:rtc h-m-s value:0x112a1f
+[180]DRAM BOOT DRIVE INFO: V0.643
+[184]the chip id is 0x7400
+[186]chip id check OK
+[190]DRAM_VCC set to 1100 mv
+[193]DRAM CLK =792 MHZ
+[195]DRAM Type =8 (3:DDR3,4:DDR4,7:LPDDR3,8:LPDDR4)
+[205]Actual DRAM SIZE =512 M
+[208]DRAM SIZE =512 MBytes, para1 = 30ea, para2 = 2000000, dram_tpr13 = 6c61
+[220]DRAM simple test OK.
+[223]rtc standby flag is 0x0, super standby flag is 0x0
+[228]dram size =512
+[231]Use rtc to store dram tuning para
+[235]card no is 2
+[237]sdcard 2 line count 8
+[239][mmc]: mmc driver ver 2020-07-21-202106151039
+[250][mmc]: Wrong media type 0x0, but host is sdc2, try mmc first
+[256][mmc]: ***Try MMC card 2***
+[281][mmc]: RMCA OK!
+[283][mmc]: bias 0
+[287][mmc]: MMC 5.1
+[289][mmc]: HSSDR52/SDR25 8 bit
+[292][mmc]: 50000000 Hz
+[294][mmc]: 14930 MB
+[296][mmc]: ***SD/MMC 2 init OK!!!***
+[329]Loading boot-pkg Succeed(index=0).
+[332]Entry_name        = u-boot
+[342]Entry_name        = monitor
+[346]Entry_name        = dtb
+[349]tunning data addr:0x4a0003e8
+[352]Jump to second Boot.
+NOTICE:  BL3-1: v1.0(debug):be96482
+NOTICE:  BL3-1: Built : 18:32:32, 2021-04-21
+NOTICE:  BL3-1 commit: 8
+NOTICE:  cpuidle init version V1.0
+ERROR:   Error initializing runtime service tspd_fast
+NOTICE:  BL3-1: Preparing for EL3 exit to normal world
+NOTICE:  BL3-1: Next image address = 0x4a000000
+?OTICE:  BL3-1: Next image spsr = 0x1d3
+
+U-Boot 2018.05-g0a2f0df-dirty (Jul 28 2021 - 20:21:44 +0800) Allwinner Technology
+
+[00.432]CPU:   Allwinner Family
+[00.435]Model: sun50iw9
+I2C:   ready
+[00.440]DRAM:  512 MiB
+[00.443]Relocation Offset is: 15ea9000
+[00.485]secure enable bit: 0
+[00.487]pmu_axp152_probe pmic_bus_read fail
+[00.491]PMU: AXP858
+[00.505]CPU=1008 MHz,PLL6=600 Mhz,AHB=200 Mhz, APB1=100Mhz  MBus=400Mhz
+[00.512]gic: sec monitor mode
+[00.516]ir_sys_cfg: error:no node for ir boot recovery settings
+[00.524]flash init start
+[00.526]workmode = 0,storage type = 2
+[00.529]MMC:     2
+[00.530][mmc]: mmc driver ver uboot2018:2020-5-24 16:54:00-202007011142
+[00.538][mmc]: get sdc_type fail and use default host:tm4.
+[00.547][mmc]: SUNXI SDMMC Controller Version:0x40502
+[00.571][mmc]: Best spd md: 2-HSDDR52/DDR50, freq: 2-50000000, Bus width: 8
+[00.577]sunxi flash init ok
+[00.581]Loading Environment from SUNXI_FLASH... OK
+[00.591]Item0 (Map) magic is bad
+[00.594]the secure storage item0 copy0 is bad
+[00.598]Item0 (Map) magic is bad
+[00.601]Item0 (Map) magic is bad
+[00.604]usb burn from boot
+delay time 0
+weak:otg_phy_config
+[00.617]usb prepare ok
+[00.700]overtime
+[00.704]do_burn_from_boot usb : no usb exist
+[00.708]drv_disp_init
+partno erro : can't find partition bootloader
+898 bytes read in 1 ms (877 KiB/s)
+[00.814]drv_disp_init finish
+[00.816]boot_gui_init:start
+partno erro : can't find partition Reserve0
+[00.827]Get Reserve0 partition number fail!
+[00.831]set disp.dev2_output_type fail. using defval=0
+uboot tcon0_cfg_mode_auto
+[00.845]boot_gui_init:finish
+[00.849]bmp_name=bootlogo.bmp
+partno erro : can't find partition bootloader
+2764856 bytes read in 32 ms (82.4 MiB/s)
+no support big size bmp[1280x720] on fb[720x480]
+[00.899]show bmp on fb failed !-1
+[00.904][mmc]: delete mmc-hs400-1_8v from dtb
+[00.908][mmc]: delete mmc-hs200-1_8v from dtb
+[00.912][mmc]: get max-frequency ok 50000000 Hz
+[00.919]update dts
+** Unrecognized filesystem type **
+[00.927]load file(ULI/factory/snum.txt) error.
+** Unrecognized filesystem type **
+[00.938]load file(ULI/factory/mac.txt) error.
+** Unrecognized filesystem type **
+[00.949]load file(ULI/factory/wifi_mac.txt) error.
+** Unrecognized filesystem type **
+[00.960]load file(ULI/factory/bt_mac.txt) error.
+** Unrecognized filesystem type **
+[00.979]load file(ULI/factory/selinux.txt) error.
+** Unrecognized filesystem type **
+[00.990]load file(ULI/factory/specialstr.txt) error.
+[00.998]update part info
+[01.007]update bootcmd
+[01.009]No ethernet found.
+Hit any key to stop autoboot:  0 
+[01.077]LCD open finish
+Android's image name: sun50i_arm64
+[01.339]Starting kernel ...
+
+[01.342][mmc]: mmc exit start
+[01.359][mmc]: mmc 2 exit ok
+[    0.000000] Booting Linux on physical CPU 0x0
+[    0.000000] Linux version 4.9.170 (liujx@liujx-virtual-machine) (gcc version 5.3.1 20160412 (Linaro GCC 5.3-2016.05) ) #210 SMP PREEMPT Tue May 24 11:35:30 CST 2022
+[    0.000000] Boot CPU: AArch64 Processor [410fd034]
+[    0.000000] bootconsole [earlycon0] enabled
+[    0.108485] BOOTEVENT:       108.471623: ON
+[    0.351508] axp2101-regulator axp2101-regulator.0: Setting DCDC frequency for unsupported AXP variant
+[    0.351595] axp2101-regulator axp2101-regulator.0: Error setting dcdc frequency: -22
+[    0.398145] ion_heap_create: Invalid heap type 6
+[  ?[    0.789249] uart uart1: get regulator failed
+[    0.795264] uart uart2: get regulator failed
+[    0.801389] uart uart5: get regulator failed
+[    0.861287] hci: request ehci1-controller gpio:267
+[    0.894254] sunxi-ehci 5311000.ehci3-controller: init_sunxi_hci is fail
+[    0.965188] hci: request ohci1-controller gpio:267
+[    1.094988] sunxi-ohci 5311000.ohci3-controller: init_sunxi_hci is fail
+[    1.116929] sunxi_ir_startup: get ir protocol failed
+[    1.126395] VE: get debugfs_mpp_root is NULL, please check mpp
+[    1.126395] 
+[    1.134699] VE: sunxi ve debug register driver failed!
+[    1.134699] 
+[    1.152068] mmc:failed to get gpios
+[    1.232513] mmc:failed to get gpios
+[    1.271321] sunxi-mmc sdc1: smc 2 p1 err, cmd 52, RTO !!
+[    1.278158] sunxi-mmc sdc1: smc 2 p1 err, cmd 52, RTO !!
+[    1.288727] sunxi-mmc sdc1: smc 2 p1 err, cmd 5, RTO !!
+[    1.295456] sunxi-mmc sdc1: smc 2 p1 err, cmd 5, RTO !!
+[    1.302178] sunxi-mmc sdc1: smc 2 p1 err, cmd 5, RTO !!
+[    1.305028] sunxi-ahub-cpudai 5097000.cpudai3-controller: ahub cpudai id invalid
+[    1.317201] sunxi-mmc sdc1: smc 2 p1 err, cmd 5, RTO !!
+[    1.335693] ERROR: can not get hdmi_cts_compatibility
+[    1.341959] ERROR: pinctrl_get for HDMI2.0 DDC fail
+[    1.356790] sunxi-mmc sdc1: smc 2 p1 err, cmd 52, RTO !!
+[    1.363887] sunxi-mmc sdc1: smc 2 p1 err, cmd 52, RTO !!
+[    1.372119] cpu cpu1: opp_list_debug_create_link: Failed to create link
+[    1.374747] sunxi-mmc sdc1: smc 2 p1 err, cmd 5, RTO !!
+[    1.375845] sunxi-mmc sdc1: smc 2 p1 err, cmd 5, RTO !!
+[    1.376934] sunxi-mmc sdc1: smc 2 p1 err, cmd 5, RTO !!
+[    1.378024] sunxi-mmc sdc1: smc 2 p1 err, cmd 5, RTO !!
+[    1.403193] cpu cpu1: _add_opp_dev: Failed to register opp debugfs (-12)
+[    1.410951] cpu cpu2: opp_list_debug_create_link: Failed to create link
+[    1.413974] sunxi-mmc sdc1: smc 2 p1 err, cmd 52, RTO !!
+[    1.415605] sunxi-mmc sdc1: smc 2 p1 err, cmd 52, RTO !!
+[    1.421210] sunxi-mmc sdc1: smc 2 p1 err, cmd 5, RTO !!
+[    1.422846] sunxi-mmc sdc1: smc 2 p1 err, cmd 5, RTO !!
+[    1.424476] sunxi-mmc sdc1: smc 2 p1 err, cmd 5, RTO !!
+[    1.426101] sunxi-mmc sdc1: smc 2 p1 err, cmd 5, RTO !!
+[    1.453957] cpu cpu2: _add_opp_dev: Failed to register opp debugfs (-12)
+[    1.461706] cpu cpu3: opp_list_debug_create_link: Failed to create link
+[    1.462241] sunxi-mmc sdc1: smc 2 p1 err, cmd 52, RTO !!
+[    1.465554] sunxi-mmc sdc1: smc 2 p1 err, cmd 52, RTO !!
+[    1.473709] sunxi-mmc sdc1: smc 2 p1 err, cmd 5, RTO !!
+[    1.477014] sunxi-mmc sdc1: smc 2 p1 err, cmd 5, RTO !!
+[    1.480302] sunxi-mmc sdc1: smc 2 p1 err, cmd 5, RTO !!
+[    1.483592] sunxi-mmc sdc1: smc 2 p1 err, cmd 5, RTO !!
+[    1.504684] cpu cpu3: _add_opp_dev: Failed to register opp debugfs (-12)
+[/init]: getty is ttyS0
+[/init]: RootDevice is "/dev/mmcblk0p4" , GPT_SUPPORT=1
+[/init]: Try to load EMMC ...
+e2fsck 1.42.12 (29-Aug-2014)
+/dev/mmcblk0p4: recovering journal
+/dev/mmcblk0p4: clean, 2489/65536 files, 46814/262144 blocks
+Starting syslogd: OK
+Starting klogd: OK
+Initializing random number generator... done.
+set PA4 function=1
+set PA4 data=1
+set PA4 dlevel=1
+set PA4 pull=1
+ln: /extp/data/config/ivicarconfig: File exists
+AVM3D login: set PA4 function=1
+set PA4 data=1
+set PA4 dlevel=1
+set PA4 pull=1
+set PI11 function=1
+set PI11 data=1
+set PI11 dlevel=0
+set PI11 pull=0
+certFilePath = /ivicarconfig/cert.txt
+udhcpc: started, v1.29.3
+activationVerify = 0
+bak activationVerify = -2
+set PH5 function=1
+set PH5 data=1
+set PH5 dlevel=1
+set PH5 pull=0
+set PH7 function=1
+set PH7 data=1
+set PH7 dlevel=0
+set PH7 pull=0
+[updateTool:50]updateTool version:2020.08.31
+Connect IP 127.0.0.1 port 7878 .
+connect error err 111 !Test End .
+start CUdevService function thread .
+Create CUdevService success!!!
+initHotplugSock .
+initHotplugSock ok fd 4 
+get_localip  eth0  .
+Can`t find app path /extp.fex .
+udhcpc: sending discover
+WARNING: awplayer <log_set_level:30>: Set log level to 3
+DEBUG  : awplayer <ReadPluginEntry:194>: read plugin entry adecoder-0 fail!
+DEBUG  : awplayer <CdxPluginLoadList:221>: have config 0 entry
+DEBUG  : awplayer <CdxPluginLoadList:222>: start to open adecoder lib
+DEBUG  : awplayer <CdxPluginLoadList:202>: Load Plugin list vdecoder
+DEBUG  : awplayer <ReadPluginEntry:178>: read plugin entry vdecoder-0 ok.
+DEBUG  : awplayer <ReadPluginEntry:178>: read plugin entry vdecoder-1 ok.
+DEBUG  : awplayer <ReadPluginEntry:178>: read plugin entry vdecoder-2 ok.
+DEBUG  : awplayer <ReadPluginEntry:178>: read plugin entry vdecoder-3 ok.
+DEBUG  : awplayer <ReadPluginEntry:178>: read plugin entry vdecoder-4 ok.
+DEBUG  : awplayer <ReadPluginEntry:178>: read plugin entry vdecoder-5 ok.
+DEBUG  : awplayer <ReadPluginEntry:178>: read plugin entry vdecoder-6 ok.
+DEBUG  : awplayer <ReadPluginEntry:178>: read plugin entry vdecoder-7 ok.
+DEBUG  : awplayer <ReadPluginEntry:178>: read plugin entry vdecoder-8 ok.
+DEBUG  : awplayer <ReadPluginEntry:178>: read plugin entry vdecoder-9 ok.
+DEBUG  : awplayer <ReadPluginEntry:178>: read plugin entry vdecoder-10 ok.
+DEBUG  : awplayer <ReadPluginEntry:178>: read plugin entry vdecoder-11 ok.
+DEBUG  : awplayer <ReadPluginEntry:178>: read plugin entry vdecoder-12 ok.
+DEBUG  : awplayer <ReadPluginEntry:194>: read plugin entry vdecoder-13 fail!
+DEBUG  : awplayer <CdxPluginLoadList:221>: have config 13 entry
+DEBUG  : awplayer <CdxPluginLoadList:222>: start to open vdecoder lib
+DEBUG  : awplayer <DlOpenPlugin:96>: plugin vdecoder.avs comment is "avs_vdecoder"
+DEBUG  : awplayer <DlOpenPlugin:97>: plugin open lib: libawavs.so
+DEBUG  : awplayer <DlOpenPlugin:116>: plugin init : CedarPluginVDInit
+DEBUG  : awplayer <DlOpenPlugin:96>: plugin vdecoder.h264 comment is "h264_vdecoder"
+DEBUG  : awplayer <DlOpenPlugin:97>: plugin open lib: libawh264.so
+DEBUG  : awplayer <DlOpenPlugin:116>: plugin init : CedarPluginVDInit
+DEBUG  : awplayer <DlOpenPlugin:96>: plugin vdecoder.h265 comment is "h265_vdecoder"
+DEBUG  : awplayer <DlOpenPlugin:97>: plugin open lib: libawh265.so
+DEBUG  : awplayer <DlOpenPlugin:116>: plugin init : CedarPluginVDInit
+DEBUG  : awplayer <DlOpenPlugin:96>: plugin vdecoder.mjpeg comment is "mjpeg_vdecoder"
+DEBUG  : awplayer <DlOpenPlugin:97>: plugin open lib: libawmjpeg.so
+DEBUG  : awplayer <DlOpenPlugin:116>: plugin init : CedarPluginVDInit
+DEBUG  : awplayer <DlOpenPlugin:96>: plugin vdecoder.mjpegplus comment is "mjpegplus_vdecoder"
+DEBUG  : awplayer <DlOpenPlugin:97>: plugin open lib: libawmjpegplus.so
+DEBUG  : awplayer <DlOpenPlugin:116>: plugin init : CedarPluginVDInit
+DEBUG  : awplayer <DlOpenPlugin:96>: plugin vdecoder.mpeg2 comment is "mpeg2_vdecoder"
+DEBUG  : awplayer <DlOpenPlugin:97>: plugin open lib: libawmpeg2.so
+DEBUG  : awplayer <DlOpenPlugin:116>: plugin init : CedarPluginVDInit
+DEBUG  : awplayer <DlOpenPlugin:96>: plugin vdecoder.mpeg4base comment is "mpeg4base_vdecoder"
+DEBUG  : awplayer <DlOpenPlugin:97>: plugin open lib: libawmpeg4base.so
+WARNING: awplayer <DlOpenPlugin:112>: Invalid plugin,function CedarPluginVDInit not found.
+DEBUG  : awplayer <DlOpenPlugin:96>: plugin vdecoder.mpeg4dx comment is "mpeg4dx_vdecoder"
+DEBUG  : awplayer <DlOpenPlugin:97>: plugin open lib: libawmpeg4dx.so
+DEBUG  : awplayer <DlOpenPlugin:116>: plugin init : CedarPluginVDInit
+DEBUG  : awplayer <DlOpenPlugin:96>: plugin vdecoder.mpeg4h263 comment is "mpeg4h263_vdecoder"
+DEBUG  : awplayer <DlOpenPlugin:97>: plugin open lib: libawmpeg4h263.so
+DEBUG  : awplayer <DlOpenPlugin:116>: plugin init : CedarPluginVDInit
+DEBUG  : awplayer <DlOpenPlugin:96>: plugin vdecoder.mpeg4normal comment is "mpeg4normal_vdecoder"
+DEBUG  : awplayer <DlOpenPlugin:97>: plugin open lib: libawmpeg4normal.so
+DEBUG  : awplayer <DlOpenPlugin:116>: plugin init : CedarPluginVDInit
+DEBUG  : awplayer <DlOpenPlugin:96>: plugin vdecoder.mpeg4vp6 comment is "mpeg4vp6_vdecoder"
+DEBUG  : awplayer <DlOpenPlugin:97>: plugin open lib: libawmpeg4vp6.so
+DEBUG  : awplayer <DlOpenPlugin:116>: plugin init : CedarPluginVDInit
+DEBUG  : awplayer <DlOpenPlugin:96>: plugin vdecoder.vp8 comment is "vp8_vdecoder"
+DEBUG  : awplayer <DlOpenPlugin:97>: plugin open lib: libawvp8.so
+DEBUG  : awplayer <DlOpenPlugin:116>: plugin init : CedarPluginVDInit
+DEBUG  : awplayer <DlOpenPlugin:96>: plugin vdecoder.wmv3 comment is "wmv3_vdecoder"
+DEBUG  : awplayer <DlOpenPlugin:97>: plugin open lib: libawwmv3.so
+DEBUG  : awplayer <DlOpenPlugin:116>: plugin init : CedarPluginVDInit
+DEBUG  : awplayer <CdxPluginLoadList:202>: Load Plugin list plugin
+DEBUG  : awplayer <ReadPluginEntry:194>: read plugin entry plugin-0 fail!
+DEBUG  : awplayer <CdxPluginLoadList:221>: have config 0 entry
+DEBUG  : awplayer <CdxPluginLoadList:222>: start to open plugin lib
+DEBUG  : awplayer <AwStreamInit:92>: aw stream init...
+DEBUG  : awplayer <AwStreamInit:124>: stream list size:6
+INFO   : awplayer <AwParserInit:397>: aw parser init...
+DEBUG  : awplayer <AwParserInit:467>: aw parser size:18
+DEBUG  : awplayer <AwMuxerInit:53>: aw muxer init ..
+DEBUG  : awplayer <AwMuxerInit:62>: aw muxer size:4
+p2p_init...
+open config file OK! 
+uart_4g_write1: ID:d60103353841343341108bec7ca0b83b, len:36
+uart_4g_write2: ID:d60103353841343341108bec7ca0b83b&, len:37
+[CarViewConfigInit:63]read config can:3, car:23, customer:2, product:1,                 canselect:0, irctrltype:1, display_output_interface:0, screen_rotate:0, hdmimode:0
+uart_4g_open uart_4g_write:ID:d60103353841343341108bec7ca0b83b
+===========>GetDispInfoCfg:                                             lcdswitch(freq:90 lcd_x:1920 lcd_y:720 lcd_ht:2048 lcd_hbp:88 lcd_hspw:40                   lcd_vt:730 lcd_vbp:5 lcd_vspw:2 h)
+read cfg.json, disp:15, ajust:1, mcuver:UNKNOWN, irmatchcode:0
+set PH8 function=1
+set PH8 data=0
+set PH8 dlevel=0
+set PH8 pull=0
+CAN_YJZC create.
+TtyInit can1 ok
+str_parms_create_str: source string == ''
+str_parms_create_str: no items found in string
+main_module_callback:805: canMode:YJZC-B
+p2p_net_data_process2, data:ping, len:4
+[p2p_event_callback,115] type:3 data:pong len:4.
+uart_4g_write1: pong, len:5
+uart_4g_write2: pong&, len:6
+icar_init Create /tmp/ivicar_algo_info.txt file m_tmpInfoFd 12 .
+icar_init statinfo Create /tmp/ivicar_algo_stat.txt file m_tmpStatFd 13 .
+2020-1-1 17:42:36:196   RoundView3DActivation:searal: (null)
+
+open ok
+Wakeup reci data [0] = 4
+Wakeup reci data [1] = 11
+Wakeup reci data [2] = 33
+Wakeup reci data [3] = 43
+
+ > Read COMMAND  : 
+  Count    : 07 
+  Opcode   : 02 
+  Param1   : 80 
+  Param2   : 00 00
+  Data( 0) : 
+  Checksum : 09 AD 
+The rx_buffer adress = 0x7ff9e3c4f8 ! 
+The send_and_receive adress = 0x7ff9e3c4f8 ! 
+The receive_response adress = 0x7ff9e3c4f8 ! 
+The il005p_receive_response adress = 0x7ff9e3c4f8 ! 
+The il005p test adress = 0x7ff9e3c4f8 ! 
+The response adress = 0x7ff9e3c4f8 ! 
+
+ > Read RESPONSE : 
+  Count    : 23 
+  Data(32) : 4C 47 95 CE 02 00 00 00 02 00 03 10 47 55 01 00 
+             C8 07 55 00 80 80 C0 A0 80 80 C2 A2 80 80 C4 A4 
+  Checksum : 3B 7D 
+
+ > GenMAC COMMAND  : 
+  Count    : 27 
+  Opcode   : 08 
+  Param1   : 40 
+  Param2   : 00 00
+  Data(32) : 85 DB D5 D3 3A BB 5C 88 2E 2F E3 8A B9 53 67 02 
+             4C C8 78 56 06 C6 73 8C 56 9E DA 80 F5 DB C1 CA 
+  Checksum : 5C C8 
+The send_and_receive adress = 0x7ff9e3c4f8 ! 
+The receive_response adress = 0x7ff9e3c4f8 ! 
+The il005p_receive_response adress = 0x7ff9e3c4f8 ! 
+The il005p test adress = 0x7ff9e3c4f8 ! 
+The response adress = 0x7ff9e3c4f8 ! 
+
+ > GenMAC RESPONSE : 
+  Count    : 23 
+  Data(32) : 9B 80 3A 9C F1 4C 9B 04 F3 62 8B 9B 45 07 D6 C8 
+             40 99 A4 3B 8B 24 AE 65 7B 9C 2B 21 73 B9 B7 89 
+  Checksum : B1 4D 
+
+ > Read COMMAND  : 
+  Count    : 07 
+  Opcode   : 02 
+  Param1   : 82 
+  Param2   : 60 00
+  Data( 0) : 
+  Checksum : 0A 3C 
+The rx_buffer adress = 0x7ff9e3c4f8 ! 
+The send_and_receive adress = 0x7ff9e3c4f8 ! 
+
+ hardware check success 2020-1-1 17:42:36:436   The device is author successful
+
+Debug: 2020-1-1 17:42:36:436    api: activate roundview system.
+
+fb0 width:720  heigh:480
+ndt: 0x0, nwh:0x2b114730
+(UIcontrol) ndt: 0x0, nwh:0x2b114730, width:720, height:480
+
+Debug: 2020-1-1 17:42:36:589    api - set roundview window: ndt:0x(nil), nwh:0x0x2b114730.
+
+Debug: 2020-1-1 17:42:36:589    api - platform data: ndt:0x(nil), nwh:0x0x2b114730, context: 0x(nil).
+Debug: 2020-1-1 17:42:36:589    api - size of window: 720, 480
+Debug: 2020-1-1 17:42:36:590    api: Set parameter - camrea input mode: 0
+****alloc_buffer->phy = 0xffa00000,alloc_buffer->vir = 0x7f9b4ac000
+****alloc_buffer->phy = 0xff9f0000,alloc_buffer->vir = 0x7f9b4a0000
+****alloc_buffer->phy = 0xff800000,alloc_buffer->vir = 0x7f9b34e000
+****alloc_buffer->phy = 0xff000000,alloc_buffer->vir = 0x7f9ae08000
+****alloc_buffer->phy = 0xfee00000,alloc_buffer->vir = 0x7f9acb6000
+CameraNodeInit:57 open the device:/dev/video2
+format index = 0, size_enum: 1280x1280format index = 1, size_enum: 1920x1920Sensor 2 resolution = 1280*720 num_planes = 1
+****alloc_buffer->phy = 0xfec00000,alloc_buffer->vir = 0x7f9a363000
+****alloc_buffer->phy = 0xfe800000,alloc_buffer->vir = 0x7f9a211000
+****alloc_buffer->phy = 0xfe400000,alloc_buffer->vir = 0x7f9a0bf000
+****alloc_buffer->phy = 0xfe000000,alloc_buffer->vir = 0x7f99f6d000
+****alloc_buffer->phy = 0xfdc00000,alloc_buffer->vir = 0x7f99e1b000
+****alloc_buffer->phy = 0xfd800000,alloc_buffer->vir = 0x7f99cc9000
+CameraNodeInit:57 open the device:/dev/video3
+CameraNodeInit, fd:23, camindex:2 ok
+format index = 0, size_enum: 1280x1280format index = 1, size_enum: 1920x1920Sensor 3 resolution = 1280*720 num_planes = 1
+****alloc_buffer->phy = 0xfd400000,alloc_buffer->vir = 0x7f99376000
+****alloc_buffer->phy = 0xfd000000,alloc_buffer->vir = 0x7f99224000
+****alloc_buffer->phy = 0xfcc00000,alloc_buffer->vir = 0x7f990d2000
+****alloc_buffer->phy = 0xfc800000,alloc_buffer->vir = 0x7f98f80000
+****alloc_buffer->phy = 0xfc400000,alloc_buffer->vir = 0x7f98e2e000
+****alloc_buffer->phy = 0xfc000000,alloc_buffer->vir = 0x7f98cdc000
+CameraNodeInit:57 open the device:/dev/video4
+CameraNodeInit, fd:30, camindex:3 ok
+p2p_net_data_process2, data:p2p, len:3
+Error: json touch correction KX is wrong
+
+Error: json touch correction KY is wrong
+
+Error: json touch correction XLC is wrong
+
+Error: json touch correction YLC is wrong
+
+Error: json touch correction XC is wrong
+
+Error: json touch correction YC is wrong
+
+(UIcontrol) make json file effective
+
+Error: json touch correction KX is wrong
+
+Error: json touch correction KY is wrong
+
+Error: json touch correction XLC is wrong
+
+Error: json touch correction YLC is wrong
+
+Error: json touch correction XC is wrong
+
+Error: json touch correction YC is wrong
+
+(UIcontrol) make json file effective
+
+(UIcontrol)  ======before RoundViewInit()======
+
+Debug: 2020-1-1 17:42:36:886    ## api - init roundview.
+
+Debug: 2020-1-1 17:42:36:886    api: lib version: v1.43.5-lnxt5-18_20220709_1137
+Debug: 2020-1-1 17:42:36:887    api: init - size of texture: 1280, 720
+
+Debug: 2020-1-1 17:42:36:887    api: init - interval of bird view scale: -100, 20
+
+Debug: 2020-1-1 17:42:36:888    api: check view adjustment parameters.
+2020-1-1 17:42:36:888   ----------------- sharing data -----------------
+2020-1-1 17:42:36:888   api: max car speed: 180.
+2020-1-1 17:42:36:888   api: max steering angle: 720.
+2020-1-1 17:42:36:889   api: max wheel angle: 25.
+2020-1-1 17:42:36:889   api: birdview scale: 1.
+2020-1-1 17:42:36:889   api: show car speed: 1.
+2020-1-1 17:42:36:889   api: show wheel angle: 1.
+2020-1-1 17:42:36:889   api: show turning light: 1.
+2020-1-1 17:42:36:889   api: show steering view: 1.
+2020-1-1 17:42:36:889   api: show radar: 0.
+2020-1-1 17:42:36:889   api: type of trace: 4.
+2020-1-1 17:42:36:889   api: color of car model: 0.
+2020-1-1 17:42:36:889   api: style of car model rendering: 1.
+2020-1-1 17:42:36:889   api: type of car model: 0.
+2020-1-1 17:42:36:889   api: set car model by path: 1.
+2020-1-1 17:42:36:889     path of car model: models/vw_magotan.bin.
+2020-1-1 17:42:36:889   api: camera decoration angle mode: 2
+2020-1-1 17:42:36:889   api: num of radars: 12
+2020-1-1 17:42:36:889   api: scale of car model: 10, 4
+2020-1-1 17:42:36:889   api: set car model color by rgb: 0.
+Debug: 2020-1-1 17:42:36:889    ------------------------------
+
+Error: 2020-1-1 17:42:36:889    FileLoadToMemory:69 fopen fail
+
+2020-1-1 17:42:36:889   LoadShareDataFromDisk:212 Fail to load configure:./config/360CarCalibconfig
+Error: 2020-1-1 17:42:36:889    RoundViewGetShareDate: 2952 Fail load the default 360 configure, Using the auto back
+Debug: 2020-1-1 17:42:36:889    api - Load default calibration parameters.
+
+Debug: 2020-1-1 17:42:36:889    api: init check sharing data.
+
+2020-1-1 17:42:36:890   >>> Current file path: /extp/data.
+
+Debug: 2020-1-1 17:42:36:890    api: init - finish table init.
+
+Debug: 2020-1-1 17:42:36:890    api: init - car infos.
+
+Debug: 2020-1-1 17:42:36:891    api: init - use car model file models/vw_magotan.bin.
+Debug: 2020-1-1 17:42:36:892    api: init - save folder path: ./config.
+
+udhcpc: sending discover
+Debug: 2020-1-1 17:42:37:198    api: init - finish 3d engine init.
+
+Debug: 2020-1-1 17:42:37:199    api: init - use fisheye table param/6045_1233-596-0.964.brp
+
+2020-1-1 17:42:37:200   fisheye table: Load fisheye table with float precision.
+
+2020-1-1 17:42:37:249   fisheye table: Load fisheye table with float precision.
+
+udhcpc: sending select for 192.168.43.100
+2020-1-1 17:42:37:261   fisheye table: Load fisheye table with float precision.
+
+2020-1-1 17:42:37:272   fisheye table: Load fisheye table with float precision.
+
+Debug: 2020-1-1 17:42:37:287    api: init - texture mode : 4
+
+2020-1-1 17:42:37:289   CameraTexInit: The default texture path is: ./config
+
+Debug: 2020-1-1 17:42:37:290    tex: White balance opening.
+
+Debug: 2020-1-1 17:42:37:290    api: init - After init camera texture.
+
+Debug: 2020-1-1 17:42:37:291    api: init - finish init calib pattern.
+
+Debug: 2020-1-1 17:42:37:291    api: update calibration pattern type.
+
+Debug: 2020-1-1 17:42:37:291    api: init - Set origin marks from file.
+
+2020-1-1 17:42:37:291   ########fs_positive_area_wb_oes_rgb_gradient_tone###################
+2020-1-1 17:42:37:291   ########fs_overlap_area_wb_oes_rgb_gradient_tone###################
+2020-1-1 17:42:37:291   ########fs_positive_area_nv21###################
+2020-1-1 17:42:37:291   ########fs_overlap_area_nv21###################
+Error: 2020-1-1 17:42:37:293    Slope table: Wrong value of parameter!
+Debug: 2020-1-1 17:42:37:293    bowl model: num of marks per camera: 4
+
+Debug: 2020-1-1 17:42:37:293    bowl model: use camera pos from ui.
+
+udhcpc: lease of 192.168.43.100 obtained, lease time 86400
+deleting routers
+Debug: 2020-1-1 17:42:37:337    bowl bottom: Load texture from file: textures/stripe.png
+2020-1-1 17:42:37:338   ########fs_positive_area_wb_oes_rgb_gradient_tone###################
+2020-1-1 17:42:37:339   ########fs_overlap_area_wb_oes_rgb_gradient_tone###################
+2020-1-1 17:42:37:339   ########fs_positive_area_nv21###################
+2020-1-1 17:42:37:339   ########fs_overlap_area_nv21###################
+Debug: 2020-1-1 17:42:37:340    slope table: target height: 4.280000, interval: [0.000000, 3.200001]
+Debug: 2020-1-1 17:42:37:341    slope table: target height: 4.280000, interval: [0.000000, 3.200001]
+Debug: 2020-1-1 17:42:37:341    bowl model: num of marks per camera: 4
+
+Debug: 2020-1-1 17:42:37:341    bowl model: use camera pos from ui.
+
+adding dns 192.168.43.1
+Debug: 2020-1-1 17:42:37:355    bowl bottom: Load texture from file: textures/stripe.png
+Debug: 2020-1-1 17:42:37:355    api: init - After init bowl render.
+
+Debug: 2020-1-1 17:42:37:359    Load car model shaders.
+2020-1-1 17:42:37:359   body ########vs_ibl_mesh_car###################
+2020-1-1 17:42:37:359   body ########fs_ibl_mesh_car_body###################
+2020-1-1 17:42:37:359   comp ########vs_ibl_mesh_car###################
+2020-1-1 17:42:37:359   comp ########fs_ibl_mesh_car###################
+
+2020-1-1 17:42:37:359   birdview ########vs_plane###################
+2020-1-1 17:42:37:359   birdview ########fs_plane_rgba###################
+
+Debug: 2020-1-1 17:42:37:520    car model: Load car model from binary file models/vw_magotan.bin.
+Debug: 2020-1-1 17:42:37:564    Load texture from file: models/vw_magotan/vw_magotan_u.jpg
+Debug: 2020-1-1 17:42:37:571    Load texture from file: models/vw_magotan/vw_magotan_a.jpg
+Debug: 2020-1-1 17:42:37:573    Load texture from file: ./config/plate.jpg
+Debug: 2020-1-1 17:42:37:574    car model: finish loading model from binary file.
+
+Debug: 2020-1-1 17:42:37:575    car render: prepare buffer 128.
+Debug: 2020-1-1 17:42:37:575    api: init - After init car model.
+
+2020-1-1 17:42:37:575   ########fs_positive_area_oes###################
+2020-1-1 17:42:37:575   ########fs_positive_area_nv21###################
+Debug: 2020-1-1 17:42:37:591    plane render: rotate on origin image 0: 1.059398
+Debug: 2020-1-1 17:42:37:591    plane render: rotate on origin image 1: 1.312477
+Debug: 2020-1-1 17:42:37:630    api: init - After init plane render.
+
+Debug: 2020-1-1 17:42:37:633    api: init - After init traces.
+
+Debug: 2020-1-1 17:42:37:637    api: init - After init ruler line render.
+
+Debug: 2020-1-1 17:42:37:637    radar: car size: 1.800000, 4.900000, 1.200000
+Debug: 2020-1-1 17:42:37:639    api: init - After init radar render.
+
+Debug: 2020-1-1 17:42:37:642    api: init - After set view contorl.
+
+Debug: 2020-1-1 17:42:37:643    api: Re-init realtime bottom view.
+
+Debug: 2020-1-1 17:42:37:643    boxexpand.width==0.400000,boxexpand.height=0.400000
+2020-1-1 17:42:37:643   offsetdis=======70.000000  -20.000000    10.000000
+2020-1-1 17:42:37:643   offsetdis=======70.000000  -20.000000    10.000000
+2020-1-1 17:42:37:643   offsetdis=======-20.000000  70.000000    10.000000
+2020-1-1 17:42:37:643   offsetdis=======-20.000000  70.000000    10.000000
+Debug: 2020-1-1 17:42:37:657    =============outSize w =260,h=100=============
+
+Debug: 2020-1-1 17:42:37:660    this->mBottomImg.height=530,this->mBottomImg.wight=220
+Debug: 2020-1-1 17:42:37:660    this->mScreenImg.height=730,this->mScreenImg.wight=260
+Debug: 2020-1-1 17:42:37:660    this->mCarSize.height=530,this->mCarSize.wight=220
+Debug: 2020-1-1 17:42:37:662    api: Finish re-init.
+Debug: 2020-1-1 17:42:37:662    init: finish init realtime bottom texture.
+
+Debug: 2020-1-1 17:42:37:662    api: Set view parameters.
+
+Debug: 2020-1-1 17:42:37:662      2D: view: 50, xoffset:0, yoffset:0, xscale:0, yscale:0
+2020-1-1 17:42:37:662   plane render: camera 0 scale X:0.600000, Y:0.850000 
+
+2020-1-1 17:42:37:662   plane render: camera 0 Offset X:241, Y:53 
+
+Debug: 2020-1-1 17:42:37:662      2D: view: 51, xoffset:0, yoffset:0, xscale:0, yscale:0
+2020-1-1 17:42:37:663   plane render: camera 1 scale X:0.500000, Y:0.750000 
+
+2020-1-1 17:42:37:663   plane render: camera 1 Offset X:301, Y:90 
+
+Debug: 2020-1-1 17:42:37:663      2D: view: 52, xoffset:0, yoffset:0, xscale:0, yscale:0
+2020-1-1 17:42:37:663   plane render: camera 2 scale X:0.800000, Y:0.350000 
+
+2020-1-1 17:42:37:663   plane render: camera 2 Offset X:143, Y:118 
+
+Debug: 2020-1-1 17:42:37:663      2D: view: 53, xoffset:0, yoffset:0, xscale:0, yscale:0
+2020-1-1 17:42:37:663   plane render: camera 3 scale X:0.800000, Y:0.350000 
+
+2020-1-1 17:42:37:663   plane render: camera 3 Offset X:0, Y:118 
+
+Debug: 2020-1-1 17:42:37:668      2D: view: 37, xoffset:0, yoffset:0, xscale:0, yscale:0
+Debug: 2020-1-1 17:42:37:674      2D: view: 37, xoffset:0, yoffset:0, xscale:0, yscale:0
+Debug: 2020-1-1 17:42:37:684      2D: view: 38, xoffset:0, yoffset:0, xscale:0, yscale:0
+Debug: 2020-1-1 17:42:37:691      2D: view: 43, xoffset:0, yoffset:0, xscale:0, yscale:0
+Debug: 2020-1-1 17:42:37:697      2D: view: 44, xoffset:0, yoffset:0, xscale:0, yscale:0
+Debug: 2020-1-1 17:42:37:705      2D: view: 42, xoffset:6, yoffset:-15, xscale:-10, yscale:2
+Debug: 2020-1-1 17:42:37:716      2D: view: 27, xoffset:0, yoffset:-59, xscale:-40, yscale:-40
+Debug: 2020-1-1 17:42:37:720    maxSerrateX = 2560.000000, minSerrateY = 660.000000
+Debug: 2020-1-1 17:42:37:728      2D: view: 28, xoffset:0, yoffset:-23, xscale:-40, yscale:-40
+Debug: 2020-1-1 17:42:37:735      2D: view: 56, xoffset:0, yoffset:0, xscale:0, yscale:0
+2020-1-1 17:42:37:735   plane render: camera 2 scale X:0.400000, Y:0.350000 
+
+2020-1-1 17:42:37:735   plane render: camera 3 scale X:0.400000, Y:0.350000 
+
+2020-1-1 17:42:37:735   plane render: camera 2 Offset X:432, Y:118 
+
+2020-1-1 17:42:37:735   plane render: camera 3 Offset X:0, Y:118 
+
+Debug: 2020-1-1 17:42:37:735      Undistorted: view: 43, xoffset:8, yoffset:0
+Debug: 2020-1-1 17:42:37:738      Undistorted: view: 44, xoffset:10, yoffset:-8
+Debug: 2020-1-1 17:42:37:741      Undistorted: view: 37, xoffset:0, yoffset:0
+Debug: 2020-1-1 17:42:37:746      Undistorted: view: 37, xoffset:0, yoffset:0
+Debug: 2020-1-1 17:42:37:752      Undistorted: view: 38, xoffset:0, yoffset:0
+Error: 2020-1-1 17:42:37:757    api: Invalid view 42 for undistorted process!
+Debug: 2020-1-1 17:42:37:757      Undistorted: view: 42, xoffset:0, yoffset:0
+Debug: 2020-1-1 17:42:37:757      Undistorted: view: 27, xoffset:0, yoffset:21
+Debug: 2020-1-1 17:42:37:763      Undistorted: view: 28, xoffset:0, yoffset:0
+Debug: 2020-1-1 17:42:37:770      3D: view: 76, camera: xoffset:6, yoffset:4, zoffset:-1
+Debug: 2020-1-1 17:42:37:770                  focus: xoffset:-6, yoffset:7, zoffset:0
+Debug: 2020-1-1 17:42:37:770      3D: view: 77, camera: xoffset:-4, yoffset:5, zoffset:-1
+Debug: 2020-1-1 17:42:37:770                  focus: xoffset:8, yoffset:7, zoffset:0
+Debug: 2020-1-1 17:42:37:770      3D: view: 78, camera: xoffset:0, yoffset:0, zoffset:0
+Debug: 2020-1-1 17:42:37:770                  focus: xoffset:0, yoffset:0, zoffset:0
+Debug: 2020-1-1 17:42:37:770      3D: view: 79, camera: xoffset:0, yoffset:0, zoffset:0
+Debug: 2020-1-1 17:42:37:770                  focus: xoffset:0, yoffset:0, zoffset:0
+2020-1-1 17:42:37:770   bowl: Reset height of model to 4.280000.
+Debug: 2020-1-1 17:42:37:771    slope table: target height: 4.280000, interval: [0.000000, 3.200001]
+2020-1-1 17:42:37:775   bowl: Adjust height of model: -1.000000, current height of model is 3.280000
+Debug: 2020-1-1 17:42:37:776    slope table: target height: 3.280000, interval: [0.000000, 3.000001]
+Debug: 2020-1-1 17:42:37:780    screen shot: Set screen size to 720 x 480.
+2020-1-1 17:42:37:782   ## api: init - Initialize system succeed!
+
+2020-1-1 17:42:37:961   api: Set parameter - Max car speed: 180
+
+2020-1-1 17:42:37:961   api: Set parameter - info of wheel: max steering angle: 720, max wheel turning angle: 25
+
+Debug: 2020-1-1 17:42:37:961    api: Set parameter - show ruler line in back view: 0
+
+Debug: 2020-1-1 17:42:37:961    api: Set parameter - Reverse trace: 0
+(UIcontrol)  ---------------call alg interface to init finish---------------
+
+Error: 2020-1-1 17:42:37:961    Set RV_CMD_EXTEND_FUNC: extend func 112 to get!
+
+Set Speed Threshold 60 .
+(carui) getInstance:11 new a RGBA Texture
+
+(carui) send model path models/vw_magotan.bin
+
+2020-1-1 17:42:38:51    api: Get parameter - camera center:1
+Debug: 2020-1-1 17:42:38:51       camera center of cam 0: 646, 368
+2020-1-1 17:42:38:51    api: Get parameter - camera center:1
+Debug: 2020-1-1 17:42:38:51       camera center of cam 0: 646, 368
+(UIcontrol) ui send both screen info:
+big:x-292.000000 y-24.000000 w-432.000000 h-432.000000
+small:x-72.000000 y-24.000000 w-216.000015 h-432.000000
+
+Debug: 2020-1-1 17:42:38:55     api: Set parameter - screen rectangle:
+Debug: 2020-1-1 17:42:38:55       change smaller screen rectangle to (72, 24, 216, 432)
+Debug: 2020-1-1 17:42:38:55     api: Set parameter - screen rectangle:
+Debug: 2020-1-1 17:42:38:55       change bigger screen rectangle to (292, 24, 432, 432)
+(UIcontrol) ui send both screen info:
+big:x-292.000000 y-24.000000 w-432.000000 h-432.000000
+small:x-72.000000 y-24.000000 w-216.000015 h-432.000000
+
+Debug: 2020-1-1 17:42:38:56     api: Set parameter - screen rectangle:
+Debug: 2020-1-1 17:42:38:56       change smaller screen rectangle to (72, 24, 216, 432)
+Debug: 2020-1-1 17:42:38:56     api: Set parameter - screen rectangle:
+Debug: 2020-1-1 17:42:38:56       change bigger screen rectangle to (292, 24, 432, 432)
+2020-1-1 17:42:38:56    api: Set parameter - Draw mode of car model of view 0: 0
+2020-1-1 17:42:38:56    api: Set parameter - Draw mode of car model of view 1: 0
+2020-1-1 17:42:38:56
+(UIcontrol) ui send car transparent: 0
+
+Debug: 2020-1-1 17:42:38:56     api: Set parameter - turn on/off 0 realtime bottom texture.
+(UIcontrol) ui send full screen info:
+big:x-72.000000 y-24.000000 w-648.000000 h-432.000000
+
+Debug: 2020-1-1 17:42:38:56     api: Set parameter - rendered screen: 2
+Debug: 2020-1-1 17:42:38:56     api: Set parameter - screen rectangle:
+Debug: 2020-1-1 17:42:38:56       change bigger screen rectangle to (72, 24, 648, 432)
+2020-1-1 17:42:38:56    api: Set parameter - Color style of car model: 1
+
+(UIcontrol) ui send material Selected: 0
+
+2020-1-1 17:42:38:57    api: Set parameter - show steering view: 1
+
+Debug: 2020-1-1 17:42:38:58     api: Set parameter - turn on/off 1 no black bottom.
+Debug: 2020-1-1 17:42:38:58     api: Set parameter - use inverse screen in TURNVIEW: 1
+
+Debug: 2020-1-1 17:42:38:58     api: Set parameter - show ruler line in tire view: 1
+
+VIEW DIMENSION.2or3D 1 
+SetZhuanxiangEn. 1 
+RVCMD_GET_P_KEY_FLAG. 0 
+RVCMD_GET_BACK_UP_FLAG. 0 
+RVCMD_GET_RADAR_FLAG. 0 
+SetAdjustFrontBack 0 .
+SetAdjustLeftRight  0 .
+SetTurnTo3D 1 .
+RVCMD_GET_VIDEO_FLAG bEnable 1  
+SetShuangshanEn. 1 
+set PH8 function=1
+set PH8 data=0
+set PH8 dlevel=0
+set PH8 pull=0
+SetViewDly 15.
+RVCMD_GET_RESET_DELAY.SetViewDly 15 
+SetDelayTurnTo 0 .
+DOUBLE_LIGHT DELAY 15 .
+ivc_single_scale_init: input_width:1280, input_height:720, out_width:1280, out_height:720
+EGL Version: "1.4 Bifrost-"r20p0-01rel0""
+EGL Vendor: "ARM"
+EGL Extensions: "EGL_KHR_partial_update EGL_KHR_config_attribs EGL_KHR_image EGL_KHR_image_base EGL_KHR_fence_sync EGL_KHR_wait_sync EGL_KHR_gl_colorspace EGL_KHR_get_all_proc_addresses EGL_IMG_con"
+
+
+
+GL Vendor: "ARM"
+GL Renderer: "Mali-G31"
+GL Version: "OpenGL ES 3.2 v1.r20p0-01rel0.8802b4327f9e69cec3438957f40dba06"
+setVideoEncParm:780 
+GL Extensions: "GL_ARM_rgba8 GL_ARM_mali_shader_binary GL_OES_depth24 GL_OES_depth_texture GL_OES_depth_texture_cube_map GL_OES_packed_depth_stencil GL_OES_rgb8_rgba8 GL_EXT_read_format_bgra GL_OES"
+
+
+
+format index = 0, size_enum: 1280x1280format index = 1, size_enum: 1920x1920Sensor 4 resolution = 1280*720 num_planes = 1
+****alloc_buffer->phy = 0xfbc00000,alloc_buffer->vir = 0x7f7b966000
+****alloc_buffer->phy = 0xfb800000,alloc_buffer->vir = 0x7f7b814000
+****alloc_buffer->phy = 0xfb400000,alloc_buffer->vir = 0x7f7b6c2000
+****alloc_buffer->phy = 0xfb000000,alloc_buffer->vir = 0x7f7b570000
+****alloc_buffer->phy = 0xfac00000,alloc_buffer->vir = 0x7f777f2000
+****alloc_buffer->phy = 0xfa800000,alloc_buffer->vir = 0x7f776a0000
+CameraNodeInit:57 open the device:/dev/video5
+CameraNodeInit, fd:37, camindex:4 ok
+format index = 0, size_enum: 1280x1280format index = 1, size_enum: 1920x1920Sensor 5 resolution = 1280*720 num_planes = 1
+****alloc_buffer->phy = 0xfa400000,alloc_buffer->vir = 0x7f7654c000
+****alloc_buffer->phy = 0xfa000000,alloc_buffer->vir = 0x7f763fa000
+****alloc_buffer->phy = 0xf9c00000,alloc_buffer->vir = 0x7f762a8000
+****alloc_buffer->phy = 0xf9800000,alloc_buffer->vir = 0x7f76156000
+****alloc_buffer->phy = 0xf9400000,alloc_buffer->vir = 0x7f76004000
+****alloc_buffer->phy = 0xf9000000,alloc_buffer->vir = 0x7f75eb2000
+CameraNodeInit, fd:54, camindex:5 ok
+glGetAttribLocation("aPosition") = 0
+glGetAttribLocation("aTexCoords") = 1
+glGetUniformLocation("uTexSampler") = 0
+mvpHandle :1(UIcontrol) ui send int luminance 40 
+
+(UIcontrol) ui send int contrast 60 
+
+(UIcontrol) ui send int saturability 50 
+
+(UIcontrol) ui send both screen info:
+big:x-292.000000 y-24.000000 w-432.000000 h-432.000000
+small:x-72.000000 y-24.000000 w-216.000015 h-432.000000
+
+Debug: 2020-1-1 17:42:38:482    api: Set parameter - rendered screen: 3
+Debug: 2020-1-1 17:42:38:482    api: Set parameter - screen rectangle:
+Debug: 2020-1-1 17:42:38:482      change smaller screen rectangle to (72, 24, 216, 432)
+Debug: 2020-1-1 17:42:38:482    api: Set parameter - screen rectangle:
+Debug: debug  : cedarc <CdcIniParserInit:24>: CdcIniParserInit
+2020-1-1 17:42:38:807     change bigger screen rectangle to (292, 24, 432, 432)
+2020-1-1 17:42:38:807   api: Set parameter - Switch to view 50, screen flag: 0, force: 0
+
+2020-1-1 17:42:38:807   api: view code <0> 20
+
+(UIcontrol) ui send view 25--RV:0
+
+2020-1-1 17:42:38:807   api: Set parameter - Switch to view 0, screen flag: 1, force: 0
+
+2020-1-1 17:42:38:807   api: view code <1> 65
+
+Debug: 2020-1-1 17:42:38:809    api: update car texture for birdview.
+debug  : cedarc <CdcIniParserInit:35>: load conf file /etc/cedarc.conf ok!
+
+debug  : cedarc <LogVersionInfo:40>: 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Cedar Codec <<<<<<<<<<<<<<<<<<<<<<<<<<<<
+tag   : CedarC-v1.2.0
+branch: master
+commit: 15195bdd453409acd8c6b3906389325650800c22
+date  : Tue May 7 11:10:20 2019 +0800
+author: jenkins8080
+patch : 
+----------------------------------------------------------------------
+
+debug  : ionAlloc <__GetIonMemOpsS:976>: *** get __GetIonMemOpsS ***
+debug  : cedarc <VeInitialize:1265>: *** nPhyOffset = 0x0
+debug  : cedarc <VeSetSpeed:1765>: *** set ve freq to 576 Mhz ***
+debug  : cedarc <VeInitialize:1330>: ve init ok
+
+debug  : ionAlloc <ion_alloc_open:141>: begin ion_alloc_open 
+
+debug  : cedarc <VeInitialize:1265>: *** nPhyOffset = 0x0
+debug  : cedarc <VeInitialize:1330>: ve init ok
+
+debug  : ionAlloc <ion_alloc_open:183>: ** phy offset = 0
+debug  : cedarc <VeRelease:1409>: ve release ok
+
+debug  : cedarc <H264SetParameterVer2:5728>: **********H264SetParameter**********
+
+debug  : cedarc <H264SetParameterVer2:5736>: profile:77, level:31, frameRate:15, bitRate:262144, idr:15, qp_raneg[10,50]
+debug  : cedarc <H264SetParameterVer2:5741>: 3d_filter:0, lt:0, hpf_flag:0, hpf_level:0
+
+debug  : cedarc <H264SetParameterVer2:5744>: rc_mode = 0, vbf info: maxBitRate = 0, quality = 0
+01-01 17:42:38.812  (W) --CID =0 h264Param.bEntropyCodingCABAC= 1,      h264Param.nBitrate= 262144 ,h264Param.nFramerate= 15 ,h264Param.nCodingMode= 0,h264Param.nMaxKeyInterval = 15, h264Param.sPro0
+warning: cedarc <H264GetParameterVer2:5563>: h264 do not support this 256 indexType
+01-01 17:42:38.812  (W) --setparm CID =0 h264Param.bEntropyCodingCABAC= 0,      h264Param.nBitrate= 0 ,h264Param.nFramerate= 0 ,h264Param.nCodingMode= 0,h264Param.nMaxKeyInterval = 0, h264Param.sPr0
+debug  : cedarc <VideoEncInit:251>: (f:VideoEncInit, l:251)
+debug  : cedarc <VideoEncInit:266>: (f:VideoEncInit, l:266)
+debug  : cedarc <check_soc_limit:109>: **CHECK_SOC_CHIPID = 00007400,
+debug  : cedarc <BitStreamCreate:104>: BitStreamCreate OK
+debug  : cedarc <H264InitVer2:4901>: h264Init: input_size[1280x720], output_size[1280x720], virtual_period:0, color_format:1
+
+ CodeTask Start mEncodeRunning 1 .
+ivc_scale_init: input_width:1280, input_height:720, out_width:1280, out_height:720
+EGL Version: "1.4 Bifrost-"r20p0-01rel0""
+EGL Vendor: "ARM"
+EGL Extensions: "EGL_KHR_partial_update EGL_KHR_config_attribs EGL_KHR_image EGL_KHR_image_base EGL_KHR_fence_sync EGL_KHR_wait_sync EGL_KHR_gl_colorspace EGL_KHR_get_all_proc_addresses EGL_IMG_con"
+
+
+
+usbpath:
+Create storage success!!!
+ui need set screen size: 720x480
+screenajst 1 
+ disp UI x:0, y:0, w:720, h:480, up:0, down:0, left:0, right:0 
+str_parms_create_str: source string == ''
+str_parms_create_str: no items found in string
+CIRKeytable Init customer ID 2 .
+str_parms_create_str: source string == ''
+local time 2020-01-01 17:42:38 ctime 1577900558
+str_parms_create_str: no items found in string
+soundtable Init customer ID 2 .
+GL Vendor: "ARM"
+GL Renderer: "Mali-G31"
+GL Version: "OpenGL ES 3.2 v1.r20p0-01rel0.8802b4327f9e69cec3438957f40dba06"
+GL Extensions: "GL_ARM_rgba8 GL_ARM_mali_shader_binary GL_OES_depth24 GL_OES_depth_texture GL_OES_depth_texture_cube_map GL_OES_packed_depth_stencil GL_OES_rgb8_rgba8 GL_EXT_read_format_bgra GL_OES"
+
+
+
+p2p_net_data_process2, data:p2p, len:3
+utc gmtime 2020-01-01 17:42:38 ctime 1577900558
+Switch view  4  dest view str 2D SELECT Front bak view_type 0 
+Debug: App version: T5Y20220525V036T2YJZC-B720x480LR
+2020-1-1 17:42:39:170   api: Set parameter - trace forward 1
+Debug: 2020-1-1 17:42:39:170    api: Set parameter - show trace 3
+(UIcontrol) ui send view 10--RV:28
+
+2020-1-1 17:42:39:171   api: Set parameter - Switch to view 28, screen flag: 1, force: 0
+
+2020-1-1 17:42:39:171   api: view code <1> 50
+
+CH00 Storge Init FIFO BUF,size 3145728 
+Support emmc device  for scan.
+ Disk table init /dev/mmcblk0 1stSTFSLBA 8388608  bakSTFSLBA 30575640 .
+dev /dev/mmcblk0 Read STFS TABLE m_1stSTFSLBA 8388608  readSize 112  
+Dev /dev/mmcblk0 Read STFS TABLE OK.
+FUNCTION: ScanMMCSDCard : 379, dev /dev/mmcblk0 Init table OK.
+AddFileIndex dev /dev/mmcblk0 bFound 0.
+AddFileIndex dGetRecIndexLBA 30541824 /dev/mmcblk0 Ok
+Open  index baseLBA 30541824.
+More than the total size of the disk.file lba:30541824  file size sec:262144 disk lba:30576640
+Start read Index head Info.
+CH00 index 00070 seg01 size 0  Repair rec segment 2023-01-06 04:06:08 -- 04:06:08.
+CH00 index 00091 seg01 size 0  Repair rec segment 2023-01-04 09:32:52 -- 09:32:52.
+Unfinished index file num 2. index num 167 
+Leaf record Index 0 m_maxIdx 169 record Seginfo Num 64 record File size 67108864 
+Record Index 1974 .
+Switch view  4  dest view str 2D SELECT Front bak view_type 4 
+glGetAttribLocation("aPosition") = 0
+Start RepairRecord unfinished Index Num2 .
+glGetAttribLocation("aTexCoords") = 1
+glGetUniformLocation("uTexSampler") = 0
+FUNCTION: RepairRecord : 1459, Stroage:Disk /dev/mmcblk0  Repair File index 70- 0 
+mvpHandle :1 File Time STFS-Seg 2023-01-06 04:06:08.
+Debug: 2020-1-1 17:42:39:528    api: Set parameter - trace forward 1
+Debug: 2020-1-1 17:42:39:528    api: Set parameter - show trace 3
+(UIcontrol) ui send view 10--RV:28
+
+2020-1-1 17:42:39:528   api: Set parameter - Switch to view 28, screen flag: 1, force: 0
+
+2020-1-1 17:42:39:528   api: view code <1> 50
+
+FUNCTION: RepairFile : 675, Error data index 39.
+Start read frame data. offset 1591647 last index 39. Sector Size 512 
+Frame type I newIndex 39  len  13776 
+ IFrame index time STFS-Seg 2023-01-06 04:06:48.
+Frame type I newIndex 40  len  13576 
+ IFrame index time STFS-Seg 2023-01-06 04:06:49.
+Frame type I newIndex 41  len  13910 
+ IFrame index time STFS-Seg 2023-01-06 04:06:50.
+Frame type I newIndex 42  len  13728 
+ IFrame index time STFS-Seg 2023-01-06 04:06:51.
+Frame type I newIndex 43  len  13972 
+ IFrame index time STFS-Seg 2023-01-06 04:06:52.
+Frame type I newIndex 44  len  13452 
+ IFrame index time STFS-Seg 2023-01-06 04:06:53.
+Frame type I newIndex 45  len  13846 
+ IFrame index time STFS-Seg 2023-01-06 04:06:54.
+Frame type I newIndex 46  len  13756 
+ IFrame index time STFS-Seg 2023-01-06 04:06:55.
+Frame type I newIndex 47  len  13744 
+ IFrame index time STFS-Seg 2023-01-06 04:06:56.
+Check end .Current offset 1591647 startOffset 192512
+CH00 Start Write index data create index 9 .
+create new index data. new Index num 9 start index 39
+CH 00 fileLBA 17565696 fileSize 1727249.
+Repair record ok.Index 70 - 1  file size 1727249  2023-01-06 04:06:08 -- 04:06:56.
+FUNCTION: RepairRecord : 1459, Stroage:Disk /dev/mmcblk0  Repair File index 91- 0 
+ File Time STFS-Seg 2023-01-04 09:32:52.
+FUNCTION: RepairFile : 675, Error data index 1.
+Start read frame data. offset 206306 last index 1. Sector Size 512 
+Check end .Current offset 206306 startOffset 192512
+CH00 Start Write index data create index 0 .
+CH 00 fileLBA 20318208 fileSize 13794.
+FUNCTION: RepairRecord : 1527, Record writer repair file fail. fileindex 91 .
+Repair fail.Index 91 repairCnt 0Repair Reocrd process end.
+ cur day time 2020-01-01 00:00:00 --2020-01-02 00:00:00.
+*** *** remain record index 70 seg 0 fileSize 0 recordType 2 .
+ Repair file Time 2023-01-06 04:06:08 -- 04:06:56.
+ cur day time 2020-01-01 00:00:00 --2020-01-02 00:00:00.
+AddFileIndex dev /dev/mmcblk0 Ok
+Disk Active cur disk 1 disk num 1
+Find device num 1,
+FUNCTION: ScanDeviceProc : 158, Record file size is 67108864 .
+CDiskInfoSet GetRecordDiskNum 1 Disk Active cur disk 0 disk num 1
+Open record Cycle Mode . Need refresh disk status.
+ch  0 start RECORD_MANUAL  
+check emmc device. capacity 15655239680 
+STORAGE_DISK_IS_INIT  IsRawDevice  bRawDev 1  .
+Disk table init /dev/mmcblk0 1stSTFSLBA 8388608  bakSTFSLBA 30575640 .
+dev /dev/mmcblk0 Read STFS TABLE m_1stSTFSLBA 8388608  readSize 112  
+Dev /dev/mmcblk0 Read STFS TABLE OK.
+ diskT.Init  ret 0  .
+Storage disk /dev/mmcblk0 is init.
+vm.drop_caches = 1
+(UIcontrol) ui send both screen info:
+big:x-292.000000 y-24.000000 w-432.000000 h-432.000000
+small:x-72.000000 y-24.000000 w-216.000015 h-432.000000
+
+Debug: 2020-1-1 17:42:40:334    api: Set parameter - screen rectangle:
+Debug: 2020-1-1 17:42:40:334      change smaller screen rectangle to (72, 24, 216, 432)
+Debug: 2020-1-1 17:42:40:334    api: Set parameter - screen rectangle:
+Debug: 2020-1-1 17:42:40:334      change bigger screen rectangle to (292, 24, 432, 432)
+2020-1-1 17:42:40:334   api: Set parameter - Switch to view 50, screen flag: 0, force: 0
+
+2020-1-1 17:42:40:334   api: view code <0> 20
+
+(UIcontrol) ui send view 10--RV:28
+
+2020-1-1 17:42:40:334   api: Set parameter - Switch to view 28, screen flag: 1, force: 0
+
+2020-1-1 17:42:40:334   api: view code <1> 50
+
+p2p_net_data_process2, data:p2p, len:3
+Fri Jan  6 12:08:01 GMT 2023
+date -s "2023-1-6 12:8:1"
+video and timeset is ready. real video size: 12968
+Start record thread .ch num 1 sleepTimeMS 10 
+Thread ID -1876774480  Start DataProcThread. Record index leaf 0 .
+Start diskNO 0.Start Index -5002 
+CDiskInfoSet GetRecordDiskNum 1  ch[0] recType[0] diskLeaf[0 MB]
+FUNCTION: DataProcThread : 1423, record thread  pTask->MANUAL_SWITCH -1 GetLeafFileNum 0 .
+ Start Recrod Time STFS-Seg 2023-01-06 12:08:01.
+ prepare Recrod Time 2020-01-02 01:42:39 --2023-01-06 12:08:01.
+Prepare IFrame num 3  data size 105293 .
+Disk Active cur disk 0 disk num 1
+p2p_net_data_process2, data:p2p, len:3
+[thread_sdk_func(): 13] thread_sdk_func enter
+[libsdk_print_version(): 7] version: git
+[libsdk_init(): 22] sdk init exit
+[libsdk_api_live_init(): 16] 
+[addSession(): 43] Play this stream using the URL : rtsp://192.168.43.100:8554/ivicar[device_live_video_process_main(): 20] device_live_video_process_main process start
+[device_p2p_process_main(): 71] device_p2p_process_main process start: argv[0] = d60103353841343341108bec7ca0b83b[thread_sdk_func(): 41] thread_sdk_func thread_join[p2p_thread(): 11] thread id: 1, b
+[handler_http_api__get_p2p_info(): 41] post api: http://iov.ivicar.cn/ws/v2/rmon/nabto, body: deviceId=d60103353841343341108bec7ca0b83b
+[live_video_thread(): 10] thread id: 0
+[loop(): 92] START LOOP*   Trying 121.41.17.229:80...
+* TCP_NODELAY set
+update_network_state: mqtt connected and network on, p2p need init.p2p_net_data_process2, data:p2p, len:3
+[libsdk_api_receive_msg(): 29] receive_msg:p2p, len:3
+[libsdk_api_receive_msg(): 49] libsdk_api_get_p2p_status: 0
+[libsdk_api_receive_msg(): 53] sdk not initialized
+File index empty. ret -5002
+Stroage:Selected File Index 00161 segs01 size 1117894 CH00.
+  Recycle record 2023-01-04 14:10:56 -- 14:11:27.
+Dev /dev/mmcblk0 Get reCycle m_diskIndex 0 fileindex 161 .
+CH 00 Get next index diskIndex 0 fileindex 161 Dev /dev/mmcblk0.
+ record time STFS-Seg 2023-01-06 12:08:01.
+FUNCTION: AddRecordTask : 252, Create thread for record.
+CH00 Open file index 161 OK fileSize 67108864 LBA 29493248.diffComsize 2420.
+ open record start STFS-Seg 2023-01-06 12:08:01.
+CH00  CFileIndex::RecordStart type 2 leaf block 0 record SN [ 01974 ].
+CRecordDataIO::DataFlushThread.
+DevRec thread start. sleep time rec 10.
+CH00 dev /dev/mmcblk0 index 00161 SN 01975 Write frame size 000013340 free size 66903012 percent 00 type 2 frame water 2 write speed 0 
+SetVideoStatus : 1
+ ch[0] recType[2] diskLeaf[0 MB]
+p2p_net_data_process2, data:ping, len:4
+[libsdk_api_receive_msg(): 29] receive_msg:ping, len:4
+[libsdk_api_send_msg(): 18] send_msg:pong, len:4
+[p2p_event_callback,115] type:3 data:pong len:4.
+uart_4g_write1: pong, len:5
+uart_4g_write2: pong&, len:6
+p2p_net_data_process2, data:p2p, len:3
+[libsdk_api_receive_msg(): 29] receive_msg:p2p, len:3
+[libsdk_api_receive_msg(): 49] libsdk_api_get_p2p_status: 0
+[libsdk_api_receive_msg(): 53] sdk not initialized
+p2p_net_data_process2, data:p2p, len:3
+[libsdk_api_receive_msg(): 29] receive_msg:p2p, len:3
+[libsdk_api_receive_msg(): 49] libsdk_api_get_p2p_status: 0
+[libsdk_api_receive_msg(): 53] sdk not initialized
+p2p_net_data_process2, data:p2p, len:3
+[libsdk_api_receive_msg(): 29] receive_msg:p2p, len:3
+[libsdk_api_receive_msg(): 49] libsdk_api_get_p2p_status: 0
+[libsdk_api_receive_msg(): 53] sdk not initialized
+m_viewDly_tm delay time out .diff 15011 m_360_delay 15  
+ p2p_net_data_process2, data:p2p, len:3
+[libsdk_api_receive_msg(): 29] receive_msg:p2p, len:3
+[libsdk_api_receive_msg(): 49] libsdk_api_get_p2p_status: 0
+[libsdk_api_receive_msg(): 53] sdk not initialized
+* Connection timed out after 10001 milliseconds
+* Closing connection 0
+curl_easy_perform() failed: Timeout was reached
+[handler_http_api__get_p2p_info(): 47] post result failure: 
+[p2p_thread(): 58] Failed to get nabto info, retrying ...[handler_http_api__get_p2p_info(): 41] post api: http://iov.ivicar.cn/ws/v2/rmon/nabto, body: deviceId=d60103353841343341108bec7ca0b83b
+*   Trying 121.41.17.229:80...
+* TCP_NODELAY set
+p2p_net_data_process2, data:p2p, len:3
+[libsdk_api_receive_msg(): 29] receive_msg:p2p, len:3
+[libsdk_api_receive_msg(): 49] libsdk_api_get_p2p_status: 0
+[libsdk_api_receive_msg(): 53] sdk not initialized
+p2p_net_data_process2, data:ping, len:4
+[libsdk_api_receive_msg(): 29] receive_msg:ping, len:4
+[libsdk_api_send_msg(): 18] send_msg:pong, len:4
+[p2p_event_callback,115] type:3 data:pong len:4.
+uart_4g_write1: pong, len:5
+uart_4g_write2: pong&, len:6
+p2p_net_data_process2, data:p2p, len:3
+[libsdk_api_receive_msg(): 29] receive_msg:p2p, len:3
+[libsdk_api_receive_msg(): 49] libsdk_api_get_p2p_status: 0
+[libsdk_api_receive_msg(): 53] sdk not initialized
+p2p_net_data_process2, data:p2p, len:3
+[libsdk_api_receive_msg(): 29] receive_msg:p2p, len:3
+[libsdk_api_receive_msg(): 49] libsdk_api_get_p2p_status: 0
+[libsdk_api_receive_msg(): 53] sdk not initialized
+p2p_net_data_process2, data:p2p, len:3
+[libsdk_api_receive_msg(): 29] receive_msg:p2p, len:3
+[libsdk_api_receive_msg(): 49] libsdk_api_get_p2p_status: 0
+[libsdk_api_receive_msg(): 53] sdk not initialized
+p2p_net_data_process2, data:p2p, len:3
+[libsdk_api_receive_msg(): 29] receive_msg:p2p, len:3
+[libsdk_api_receive_msg(): 49] libsdk_api_get_p2p_status: 0
+[libsdk_api_receive_msg(): 53] sdk not initialized
+* Connection timed out after 10001 milliseconds
+* Closing connection 0
+curl_easy_perform() failed: Timeout was reached
+[handler_http_api__get_p2p_info(): 47] post result failure: 
+[p2p_thread(): 58] Failed to get nabto info, retrying ...p2p_net_data_process2, data:p2p, len:3
+[libsdk_api_receive_msg(): 29] receive_msg:p2p, len:3
+[libsdk_api_receive_msg(): 49] libsdk_api_get_p2p_status: 0
+[libsdk_api_receive_msg(): 53] sdk not initialized
+[handler_http_api__get_p2p_info(): 41] post api: http://iov.ivicar.cn/ws/v2/rmon/nabto, body: deviceId=d60103353841343341108bec7ca0b83b
+*   Trying 121.41.17.229:80...
+* TCP_NODELAY set
+p2p_net_data_process2, data:ping, len:4
+[libsdk_api_receive_msg(): 29] receive_msg:ping, len:4
+[libsdk_api_send_msg(): 18] send_msg:pong, len:4
+[p2p_event_callback,115] type:3 data:pong len:4.
+uart_4g_write1: pong, len:5
+uart_4g_write2: pong&, len:6
+p2p_net_data_process2, data:p2p, len:3
+[libsdk_api_receive_msg(): 29] receive_msg:p2p, len:3
+[libsdk_api_receive_msg(): 49] libsdk_api_get_p2p_status: 0
+[libsdk_api_receive_msg(): 53] sdk not initialized
+p2p_net_data_process2, data:p2p, len:3
+[libsdk_api_receive_msg(): 29] receive_msg:p2p, len:3
+[libsdk_api_receive_msg(): 49] libsdk_api_get_p2p_status: 0
+[libsdk_api_receive_msg(): 53] sdk not initialized
+* Connection timed out after 10001 milliseconds
+* Closing connection 0
+curl_easy_perform() failed: Timeout was reached
+[handler_http_api__get_p2p_info(): 47] post result failure: 
+[p2p_thread(): 58] Failed to get nabto info, retrying ...p2p_net_data_process2, data:ping, len:4
+[libsdk_api_receive_msg(): 29] receive_msg:ping, len:4
+[libsdk_api_send_msg(): 18] send_msg:pong, len:4
+[p2p_event_callback,115] type:3 data:pong len:4.
+uart_4g_write1: pong, len:5
+uart_4g_write2: pong&, len:6
+p2p_net_data_process2, data:ping, len:4
+[libsdk_api_receive_msg(): 29] receive_msg:ping, len:4
+[libsdk_api_send_msg(): 18] send_msg:pong, len:4
+[p2p_event_callback,115] type:3 data:pong len:4.
+uart_4g_write1: pong, len:5
+uart_4g_write2: pong&, len:6
+p2p_net_data_process2, data:p2p, len:3
+[libsdk_api_receive_msg(): 29] receive_msg:p2p, len:3
+[libsdk_api_receive_msg(): 49] libsdk_api_get_p2p_status: 0
+[libsdk_api_receive_msg(): 53] sdk not initialized
+p2p_net_data_process2, data:p2p, len:3
+[libsdk_api_receive_msg(): 29] receive_msg:p2p, len:3
+[libsdk_api_receive_msg(): 49] libsdk_api_get_p2p_status: 0
+[libsdk_api_receive_msg(): 53] sdk not initialized
+p2p_net_data_process2, data:p2p, len:3
+[libsdk_api_receive_msg(): 29] receive_msg:p2p, len:3
+[libsdk_api_receive_msg(): 49] libsdk_api_get_p2p_status: 0
+[libsdk_api_receive_msg(): 53] sdk not initialized
+p2p_net_data_process2, data:p2p, len:3
+[libsdk_api_receive_msg(): 29] receive_msg:p2p, len:3
+[libsdk_api_receive_msg(): 49] libsdk_api_get_p2p_status: 0
+[libsdk_api_receive_msg(): 53] sdk not initialized
+
+LoAVM3D login: p2p_net_data_process2, data:p2p, len:3
+[libsdk_api_receive_msg(): 29] receive_msg:p2p, len:3
+[libsdk_api_receive_msg(): 49] libsdk_api_get_p2p_status: 0
+[libsdk_api_receive_msg(): 53] sdk not initialized
+p2p_net_data_process2, data:ping, len:4
+[libsdk_api_receive_msg(): 29] receive_msg:ping, len:4
+[libsdk_api_send_msg(): 18] send_msg:pong, len:4
+[p2p_event_callback,115] type:3 data:pong len:4.
+uart_4g_write1: pong, len:5
+uart_4g_write2: pong&, len:6
+p2p_net_data_process2, data:p2p, len:3
+[libsdk_api_receive_msg(): 29] receive_msg:p2p, len:3
+[libsdk_api_receive_msg(): 49] libsdk_api_get_p2p_status: 0
+[libsdk_api_receive_msg(): 53] sdk not initialized
+p2p_net_data_process2, data:p2p, len:3
+[libsdk_api_receive_msg(): 29] receive_msg:p2p, len:3
+[libsdk_api_receive_msg(): 49] libsdk_api_get_p2p_status: 0
+[libsdk_api_receive_msg(): 53] sdk not initialized
+p2p_net_data_process2, data:p2p, len:3
+[libsdk_api_receive_msg(): 29] receive_msg:p2p, len:3
+[libsdk_api_receive_msg(): 49] libsdk_api_get_p2p_status: 0
+[libsdk_api_receive_msg(): 53] sdk not initialized
+p2p_net_data_process2, data:p2p, len:3
+[libsdk_api_receive_msg(): 29] receive_msg:p2p, len:3
+[libsdk_api_receive_msg(): 49] libsdk_api_get_p2p_status: 0
+[libsdk_api_receive_msg(): 53] sdk not initialized
+p2p_net_data_process2, data:p2p, len:3
+[libsdk_api_receive_msg(): 29] receive_msg:p2p, len:3
+[libsdk_api_receive_msg(): 49] libsdk_api_get_p2p_status: 0
+[libsdk_api_receive_msg(): 53] sdk not initialized
+p2p_net_data_process2, data:ping, len:4
+[libsdk_api_receive_msg(): 29] receive_msg:ping, len:4
+[libsdk_api_send_msg(): 18] send_msg:pong, len:4
+[p2p_event_callback,115] type:3 data:pong len:4.
+uart_4g_write1: pong, len:5
+uart_4g_write2: pong&, len:6
+p2p_net_data_process2, data:p2p, len:3
+[libsdk_api_receive_msg(): 29] receive_msg:p2p, len:3
+[libsdk_api_receive_msg(): 49] libsdk_api_get_p2p_status: 0
+[libsdk_api_receive_msg(): 53] sdk not initialized
+p2p_net_data_process2, data:p2p, len:3
+[libsdk_api_receive_msg(): 29] receive_msg:p2p, len:3
+[libsdk_api_receive_msg(): 49] libsdk_api_get_p2p_status: 0
+[libsdk_api_receive_msg(): 53] sdk not initialized
+p2p_net_data_process2, data:p2p, len:3
+[libsdk_api_receive_msg(): 29] receive_msg:p2p, len:3
+[libsdk_api_receive_msg(): 49] libsdk_api_get_p2p_status: 0
+[libsdk_api_receive_msg(): 53] sdk not initialized
+p2p_net_data_process2, data:p2p, len:3
+[libsdk_api_receive_msg(): 29] receive_msg:p2p, len:3
+[libsdk_api_receive_msg(): 49] libsdk_api_get_p2p_status: 0
+[libsdk_api_receive_msg(): 53] sdk not initialized
+p2p_net_data_process2, data:p2p, len:3
+[libsdk_api_receive_msg(): 29] receive_msg:p2p, len:3
+[libsdk_api_receive_msg(): 49] libsdk_api_get_p2p_status: 0
+[libsdk_api_receive_msg(): 53] sdk not initialized
+p2p_net_data_process2, data:ping, len:4
+[libsdk_api_receive_msg(): 29] receive_msg:ping, len:4
+[libsdk_api_send_msg(): 18] send_msg:pong, len:4
+[p2p_event_callback,115] type:3 data:pong len:4.
+uart_4g_write1: pong, len:5
+uart_4g_write2: pong&, len:6
+p2p_net_data_process2, data:p2p, len:3
+[libsdk_api_receive_msg(): 29] receive_msg:p2p, len:3
+[libsdk_api_receive_msg(): 49] libsdk_api_get_p2p_status: 0
+[libsdk_api_receive_msg(): 53] sdk not initialized
+p2p_net_data_process2, data:p2p, len:3
+[libsdk_api_receive_msg(): 29] receive_msg:p2p, len:3
+[libsdk_api_receive_msg(): 49] libsdk_api_get_p2p_status: 0
+[libsdk_api_receive_msg(): 53] sdk not initialized
+p2p_net_data_process2, data:ping, len:4
+[libsdk_api_receive_msg(): 29] receive_msg:ping, len:4
+[libsdk_api_send_msg(): 18] send_msg:pong, len:4
+[p2p_event_callback,115] type:3 data:pong len:4.
+uart_4g_write1: pong, len:5
+uart_4g_write2: pong&, len:6
+p2p_net_data_process2, data:ping, len:4
+[libsdk_api_receive_msg(): 29] receive_msg:ping, len:4
+[libsdk_api_send_msg(): 18] send_msg:pong, len:4
+[p2p_event_callback,115] type:3 data:pong len:4.
+uart_4g_write1: pong, len:5
+uart_4g_write2: pong&, len:6
+p2p_net_data_process2, data:ping, len:4
+[libsdk_api_receive_msg(): 29] receive_msg:ping, len:4
+[libsdk_api_send_msg(): 18] send_msg:pong, len:4
+[p2p_event_callback,115] type:3 data:pong len:4.
+uart_4g_write1: pong, len:5
+uart_4g_write2: pong&, len:6
+
+Login timed out after 60 seconds
+AVM3D login: p2p_net_data_process2, data:ping, len:4
+[libsdk_api_receive_msg(): 29] receive_msg:ping, len:4
+[libsdk_api_send_msg(): 18] send_msg:pong, len:4
+[p2p_event_callback,115] type:3 data:pong len:4.
+uart_4g_write1: pong, len:5
+uart_4g_write2: pong&, len:6
+p2p_net_data_process2, data:ping, len:4
+[libsdk_api_receive_msg(): 29] receive_msg:ping, len:4
+[libsdk_api_send_msg(): 18] send_msg:pong, len:4
+[p2p_event_callback,115] type:3 data:pong len:4.
+uart_4g_write1: pong, len:5
+uart_4g_write2: pong&, len:6
+p2p_net_data_process2, data:ping, len:4
+[libsdk_api_receive_msg(): 29] receive_msg:ping, len:4
+[libsdk_api_send_msg(): 18] send_msg:pong, len:4
+[p2p_event_callback,115] type:3 data:pong len:4.
+uart_4g_write1: pong, len:5
+uart_4g_write2: pong&, len:6
+p2p_net_data_process2, data:ping, len:4
+[libsdk_api_receive_msg(): 29] receive_msg:ping, len:4
+[libsdk_api_send_msg(): 18] send_msg:pong, len:4
+[p2p_event_callback,115] type:3 data:pong len:4.
+uart_4g_write1: pong, len:5
+uart_4g_write2: pong&, len:6
